@@ -10,7 +10,6 @@ public class Jukebox {
             System.out.println("Песня не найдена");
         }
     }
-
     public static void main(String[] args) {
         Jukebox jukebox = new Jukebox();
         jukebox.music(1);
