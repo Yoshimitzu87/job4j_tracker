@@ -10,24 +10,6 @@ public class BallStory {
             }
         }
 
-        public static class Wolf {
-            public void tryEat(Ball ball) {
-                ball.tryRun(false);
-            }
-        }
-
-        public static class Hare {
-            public void tryEat(Ball ball) {
-                ball.tryRun(false);
-            }
-        }
-
-        public static class Fox {
-            public void tryEat(Ball ball) {
-                ball.tryRun(true);
-            }
-        }
-
         public static void main(String[] args) {
             Ball ball = new Ball();
             Wolf wolf = new Wolf();
