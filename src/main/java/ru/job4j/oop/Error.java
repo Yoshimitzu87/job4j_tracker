@@ -21,7 +21,6 @@ public class Error {
         System.out.println("ТретьяОшибка: " + thirdError);
     }
 
-
     public static void main(String[] args) {
         Error error = new Error(true, 2, "asdasd");
         error.printInfo();
