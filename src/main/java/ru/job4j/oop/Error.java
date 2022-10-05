@@ -22,7 +22,7 @@ public class Error {
     }
 
     public static void main(String[] args) {
-        Error error = new Error(true, 2, "asdasd");
+        Error error = new Error(true, 3, "asdasd");
         error.printInfo();
         System.out.println(" ");
         Error errorOne = new Error();
