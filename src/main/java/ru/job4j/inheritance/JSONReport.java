@@ -7,7 +7,7 @@ public class JSONReport {
 
         return "{" + ln
                 + "\t\"name\" : " + ch + name + ch + "," + ln
-                + "\t\"body\" : " + '"' + body + '"' + ln
+                + "\t\"body\" : " + ch + body + ch + ln
                 + "}";
 
     }
