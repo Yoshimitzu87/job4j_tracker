@@ -27,40 +27,20 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-        Item[] rsl;
-        rsl = Arrays.copyOf(items, size);
-        return rsl;
+        return Arrays.copyOf(items, size);
+
     }
 
     public Item[] findByName(String key) {
         Item[] rsl = new Item[size];
+        int count = 0;
         for (int index = 0; index < size; index++) {
             Item item = items[index];
             if (Objects.equals(item.getName(), key)) {
-                size = size - 2;
-                rsl = Arrays.copyOf(items, size);
-                break;
+                count++;
+                rsl = Arrays.copyOf(items, count);
             }
         }
         return rsl;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Tracker tracker = (Tracker) o;
-        return ids == tracker.ids && size == tracker.size && Arrays.equals(items, tracker.items);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(ids, size);
-        result = 31 * result + Arrays.hashCode(items);
-        return result;
     }
 }
