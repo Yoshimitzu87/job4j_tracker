@@ -12,8 +12,8 @@ public class VehicleUsage {
         Vehicle bus2 = new Bus();
         Vehicle bus3 = new Bus();
 
-        Vehicle [] vehicles = new Vehicle[]{air1, air2, air3, tr1, tr2, tr3, bus1, bus2, bus3};
-        for (Vehicle v : vehicles){
+        Vehicle[] vehicles = new Vehicle[]{air1, air2, air3, tr1, tr2, tr3, bus1, bus2, bus3};
+        for (Vehicle v : vehicles) {
             v.move();
         }
     }
