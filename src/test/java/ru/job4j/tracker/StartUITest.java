@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
 import org.junit.jupiter.api.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertNull;
 
@@ -31,7 +32,7 @@ public class StartUITest {
     }
 
     @Test
-    public void whenDeleteItem(){
+    public void whenDeleteItem() {
         Tracker tracker = new Tracker();
         Item item = new Item("test1");
         tracker.add(item);
@@ -42,5 +43,5 @@ public class StartUITest {
         StartUI.deleteItem(new StubInput(answers), tracker);
         Item deleted = tracker.findById(item.getId());
         assertNull(deleted);
-        }
+    }
 }
