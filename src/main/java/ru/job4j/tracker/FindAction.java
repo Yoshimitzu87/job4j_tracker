@@ -7,7 +7,6 @@ public class FindAction implements UserAction {
         this.out = out;
     }
 
-
     @Override
     public String name() {
         return "Find Item";
