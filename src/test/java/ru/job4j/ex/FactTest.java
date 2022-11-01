@@ -17,7 +17,7 @@ public class FactTest {
     }
 
     @Test
-    public void whenNoException(){
+    public void whenNoException() {
         int n = 5;
         int expected = 120;
         int result = Fact.calc(n);
