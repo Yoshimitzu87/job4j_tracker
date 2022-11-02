@@ -8,14 +8,16 @@ public class FindEl {
                 rsl = i;
                 break;
             }
-            throw new ElementNotFoundException("Element not found.");
+            if (rsl == -1) {
+                throw new ElementNotFoundException("Element not found.");
+            }
         }
         return rsl;
     }
 
     public static void main(String[] args) {
         try {
-            indexOf(new String[]{"a", "b", "c"}, "x");
+            indexOf(new String[]{"a", "b", "c"}, "z");
         } catch (ElementNotFoundException e) {
             e.printStackTrace();
         }
