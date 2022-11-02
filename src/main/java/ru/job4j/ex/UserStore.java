@@ -9,7 +9,7 @@ public class UserStore {
                 t = user;
                 break;
             }
-            if (t==null) {
+            if (t == null) {
                 throw new UserNotFoundException("User not found");
             }
         }
