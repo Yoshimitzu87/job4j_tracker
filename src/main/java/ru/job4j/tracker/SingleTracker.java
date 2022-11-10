@@ -10,11 +10,11 @@ public final class SingleTracker {
 
     private static SingleTracker tracker = new SingleTracker();
 
-    private SingleTracker (){
+    private SingleTracker () {
 
     }
 
-    public static SingleTracker tracker(){
+    public static SingleTracker tracker() {
         if(tracker == null) {
             tracker = new SingleTracker();
         }
