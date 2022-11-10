@@ -11,7 +11,6 @@ public final class SingleTracker {
     private static SingleTracker tracker = new SingleTracker();
 
     private SingleTracker() {
-
     }
 
     public static SingleTracker tracker() {
