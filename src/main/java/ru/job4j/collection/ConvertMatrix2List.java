@@ -6,8 +6,8 @@ import java.util.List;
 public class ConvertMatrix2List {
     public List<Integer> toList(int[][] array) {
         List<Integer> list = new ArrayList<>();
-        for (int[] row1 : array) {
-            for (int cell : row1) {
+        for (int[] row : array) {
+            for (int cell : row) {
                 list.add(cell);
             }
         }
