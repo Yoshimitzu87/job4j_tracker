@@ -2,7 +2,6 @@ package ru.job4j.tracker;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Tracker {
     private final List<Item> items = new ArrayList<>();
@@ -41,9 +40,8 @@ public class Tracker {
 
     public List<Item> findByName(String key) {
         List<Item> rsl = new ArrayList<>();
-        for (int index = 0; index < size; index++) {
-            Item item = items.get(index);
-            if (Objects.equals(item.getName(), key)) {
+        for (Item item : items) {
+            if (item.getName().equals(key)) {
                 rsl.add(item);
             }
         }
