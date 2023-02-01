@@ -27,10 +27,7 @@ public class Tracker {
 
     public Item findById(int id) {
         int index = indexOf(id);
-        if (index >= 0) {
-            return items.get(index);
-        }
-        return null;
+        return index >= 0 ? items.get(index) : null;
     }
 
     public List<Item> findAll() {
