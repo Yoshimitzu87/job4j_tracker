@@ -31,8 +31,9 @@ public class AnalyzeByMap {
         List<Label> rsl = new ArrayList<>();
         Map<String, Integer> lhm = new LinkedHashMap<>();
         for (Pupil stud : pupils) {
-            for (Subject name : stud.subjects())
+            for (Subject name : stud.subjects()) {
                 lhm.put(name.name(), lhm.getOrDefault(name.name(), 0) + name.score());
+            }
         }
         for (String key : lhm.keySet()) {
             rsl.add(new Label(key, (double) lhm.get(key) / pupils.size()));
