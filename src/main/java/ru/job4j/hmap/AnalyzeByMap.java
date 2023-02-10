@@ -29,7 +29,6 @@ public class AnalyzeByMap {
         return list;
     }
 
-
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
         List<Label> rsl = new ArrayList<>();
         Map<String, Integer> lhm = new LinkedHashMap<>();
