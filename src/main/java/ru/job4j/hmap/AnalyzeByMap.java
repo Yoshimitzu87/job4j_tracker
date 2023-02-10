@@ -16,16 +16,19 @@ public class AnalyzeByMap {
     }
 
     public static List<Label> averageScoreByPupil(List<Pupil> pupils) {
-        List<Label> labels = new ArrayList<>();
-        double sum = 0;
-        for (Pupil p : pupils) {
-            for (Subject s : p.subjects()) {
-                sum += s.score();
+        List<Label> list = new ArrayList<>();
+        for (Pupil pupil : pupils) {
+            int count = 0;
+            double score = 0D;
+            for (Subject subject : pupil.subjects()) {
+                score += subject.score();
+                count++;
             }
-            labels.add(new Label(p.name(), sum / p.subjects().size()));
+            list.add(new Label(pupil.name(), score / count));
         }
-        return labels;
+        return list;
     }
+
 
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
         List<Label> rsl = new ArrayList<>();
@@ -42,14 +45,31 @@ public class AnalyzeByMap {
     }
 
     public static Label bestStudent(List<Pupil> pupils) {
-        List<Label> students = averageScoreByPupil(pupils);
-        students.sort(Comparator.naturalOrder());
-        return students.get(students.size() - 1);
+        List<Label> list = new ArrayList<>();
+        for (Pupil pupil : pupils) {
+            double score = 0D;
+            for (Subject subject : pupil.subjects()) {
+                score += subject.score();
+            }
+            list.add(new Label(pupil.name(), score));
+        }
+        list.sort(Comparator.naturalOrder());
+        return list.get(pupils.size() - 1);
     }
 
     public static Label bestSubject(List<Pupil> pupils) {
-        List<Label> subjects = averageScoreBySubject(pupils);
-        subjects.sort(Comparator.naturalOrder());
-        return subjects.get(subjects.size() - 1);
+        List<Label> list = new ArrayList<>();
+        Map<String, Integer> map = new HashMap<>();
+        for (Pupil pupil : pupils) {
+            for (Subject subject : pupil.subjects()) {
+                int rslSum = map.getOrDefault(subject.name(), 0) + subject.score();
+                map.put(subject.name(), rslSum);
+            }
+        }
+        for (String name : map.keySet()) {
+            list.add(new Label(name, map.get(name)));
+        }
+        list.sort(Comparator.naturalOrder());
+        return list.get(list.size() - 1);
     }
 }

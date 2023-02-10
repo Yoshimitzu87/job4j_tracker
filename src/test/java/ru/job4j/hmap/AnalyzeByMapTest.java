@@ -38,7 +38,7 @@ class AnalyzeByMapTest {
 
     @Test
     public void whenListOfPupilAverage() {
-        List<Label> average = AnalyzeByMap.averageScoreByPupil(
+          List<Label> average = AnalyzeByMap.averageScoreByPupil(
                 List.of(
                         new Pupil("Ivanov",
                                 List.of(
