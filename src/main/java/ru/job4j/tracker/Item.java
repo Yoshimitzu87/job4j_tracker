@@ -50,6 +50,7 @@ public class Item {
     public LocalDateTime getCreated() {
         return created;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
